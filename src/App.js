@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
-import FavoritesList from './components/FavoritesList';
-import DislikesList from './components/DislikesList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
 import ThumbsIcons from './components/ThumbsIcons';
@@ -147,7 +145,7 @@ const App = () => {
         <MovieListHeading heading='Movies You Liked' />
       </div>
       <div className='row'>
-        <FavoritesList
+        <MovieList
           movies={favorites}
           getMovieDetails={getMovieDetails}
           // send favorites prop down again to do fill color check for thumbs up button
@@ -163,7 +161,7 @@ const App = () => {
         <MovieListHeading heading='Movies You Disliked' />
       </div>
       <div className='row'>
-        <DislikesList
+        <MovieList
           movies={dislikes}
           getMovieDetails={getMovieDetails}
           // send favorites prop down again to do fill color check for thumbs up button
